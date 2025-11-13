@@ -1,0 +1,5 @@
+{
+  "name": "Tradify Lite - AI Trading & CRM Platform",
+  "description": "A front-end-only demo of an AI-powered trading and CRM platform. This 'Lite' version features a mock portfolio, simulation trading, a deals pipeline CRM, and educational tools. It does not involve real financial transactions.",
+  "requestFramePermissions": []
+}

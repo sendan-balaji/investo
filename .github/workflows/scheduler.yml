@@ -1,0 +1,19 @@
+# .github/workflows/scheduler.yml
+
+name: Call Supabase Edge Function
+
+on:
+  schedule:
+    # This runs the job every 5 minutes
+    - cron: '*/5 * * * *'
+
+jobs:
+  call-edge-function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Supabase Function via cURL
+        run: |
+          curl -X POST "https://ecjfgqovuzbuswxmhezm.supabase.co/functions/v1/update-prices" \
+          -H "Authorization: Bearer ${{ secrets.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVjamZncW92dXpidXN3eG1oZXptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIwMTUyNTAsImV4cCI6MjA3NzU5MTI1MH0.APr6QaiHNkDL-XFD_rWPT09NqrLI2HrqruGqXLYXQCk }}" \
+          -H "Content-Type: application/json" \
+          -d '{}'
